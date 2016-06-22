@@ -182,6 +182,7 @@ void BoardConfig( )
 	TRISB1 = 0;
 	TRISB2 = 0;
 	TRISB4 = 0;
+    TRISB5 = 0;
 
 	TRISD = 0x00;				/* Barramento de Dados - Output */
 	
@@ -192,9 +193,6 @@ void BoardConfig( )
 	TRISC1 = 1;
 	TRISC2 = 1;
 
-//	OPTION_REGbits.T0CS = 0;	/* Timer increments on instruction clock */
-//	INTCONbits.T0IE = 1;		/* Enable interrupt on TMR0 overflow */
-	
 	T1CONbits.T1CKPS0 = 1;		/* Prescaler 1/8 */
 	T1CONbits.T1CKPS1 = 1;
 
@@ -209,6 +207,8 @@ void BoardConfig( )
 	INTCONbits.GIE  = 1;		/* Global interrupt enable */
 
 	DS1307_Init( );
+    
+    RB5 = 1; /* Leds da Barra */
 
 }
 
@@ -591,19 +591,6 @@ void executaModoInicial()
 		faseModo = 0;
 		modoDeOperacao = executaModoAjuste;
 	}
-//	else if( DS1307_isPaused() )
-//	{
-////		DS1307_Set( DAY, 9 );
-////		DS1307_Set( MONTH, 6 );
-////		DS1307_Set( YEAR, 16 );
-////		DS1307_Set( HOUR, 23 );
-////		DS1307_Set( MINUTE, 59 );
-//		DS1307_Set( SECOND, 0 );
-//		DS1307_Write();
-////		DS1307_Set( DAY_OF_WEEK, 1 );
-//		faseModo = 0;
-//		modoDeOperacao = executaModoNormal;
-//	}
 	else
 	{
 		modoDeOperacao = executaModoNormal;

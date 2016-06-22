@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=RelogioAllianz.X
+PROJECTNAME=relogio-digital
 
 # Active Configuration
 DEFAULTCONF=default

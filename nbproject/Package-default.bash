@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/RelogioAllianz.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=RelogioAllianz.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=relogioallianz.x/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/relogio-digital.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=relogio-digital.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=relogio-digital/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/relogioallianz.x/bin
+makeDirectory ${TMPDIR}/relogio-digital/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/relogioallianz.x.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/relogio-digital.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/relogioallianz.x.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/relogio-digital.tar *
 checkReturnCode
 
 # Cleanup

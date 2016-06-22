@@ -1,0 +1,13 @@
+/build/
+/dist/*.elf
+/dist/default/production/*.xml
+/dist/default/production/*.elf
+/dist/default/production/*.cmf
+*.lst
+*.map
+*.hxl
+*.rlf
+*.sym
+*.obj
+*.mum
+*.sdb
